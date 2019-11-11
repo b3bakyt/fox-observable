@@ -1,4 +1,5 @@
-const { COMMAND } = require('./constants');
+const { COMMAND }       = require('./constants');
+const { FUNCTION_TYPE } = require('./constants');
 
 
 function setOperator(callbacks) {
@@ -44,8 +45,15 @@ const OPERATORS = {
   },
 };
 
+function getOperators(operators) {
+  return {
+    map:    setOperator(operators)(FUNCTION_TYPE.map),
+    filter: setOperator(operators)(FUNCTION_TYPE.filter),
+  }
+}
+
 module.exports = {
   OPERATORS,
   subscribe,
-  setOperator,
+  getOperators,
 };
