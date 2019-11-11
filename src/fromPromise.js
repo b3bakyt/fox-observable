@@ -4,12 +4,12 @@ const {
   setOperator,
   subscribe, }          = require('./operators');
 
-function fromPromise(array) {
+function fromPromise(promise) {
   const dataEmitter = new DataEmitter();
   const operatorsFlow = [];
 
   function startEmittingData() {
-    array.map(data => dataEmitter.emit('data', data));
+    promise.then(data => dataEmitter.emit('data', data));
   }
 
   return Object.create({
