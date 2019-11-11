@@ -1,0 +1,20 @@
+{
+  "name": "fox-observables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b3bakyt/fox-observables"
+  }
+}
