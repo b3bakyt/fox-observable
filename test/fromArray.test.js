@@ -15,4 +15,15 @@ describe('fromArray', function () {
         expect(val).equals(8);
       });
   });
+
+  it('Should filter values', function () {
+    const obs = fromArray([4, 5]);
+
+    obs
+      .filter(val => val < 5)
+      .map(val => val * 2)
+      .subscribe(val => {
+        expect(val).equals(8);
+      });
+  });
 });
