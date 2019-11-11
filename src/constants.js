@@ -1,10 +1,11 @@
 const COMMAND = {
-  filter_not_passed: Symbol('filter_not_passed'),
+  avoid_next_operators: Symbol('avoid_next_operators'),
 };
 
 const FUNCTION_TYPE = {
   map: 'map',
   filter: 'filter',
+  distinctUntilChanged: 'distinctUntilChanged',
 };
 
 module.exports = {
