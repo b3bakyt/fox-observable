@@ -30,4 +30,17 @@ describe('fromArray', function () {
         expect(val).equals(results[i++]);
       });
   });
+
+  it('A value should pass all chained operators before processing next value', function () {
+    const obs = fromArray([1,2,3]);
+    const results = {2: 3, 4: 4, 6: 5};
+    let i = 0;
+
+    obs
+      .map(val => (i++, val + 1))
+      .map(val => (i++, val + 1))
+      .subscribe(val => {
+        expect(val).equals(results[i]);
+      });
+  });
 });
